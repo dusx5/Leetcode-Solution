@@ -28,7 +28,7 @@ public class BSTIterator {
         return (!myStack.empty() || current != null);
     }
 
-    /** @return the next smallest number */
+    /** @return the next smallest number 二叉树的中序遍历 思想*/
     public int next() {
         while(current != null){
             myStack.push(current);
