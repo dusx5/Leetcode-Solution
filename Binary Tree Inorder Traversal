@@ -1,0 +1,27 @@
+public List<Integer> inorderTraversal(TreeNode root) {
+        List<Integer> list = new ArrayList<Integer>();
+        if(root == null)
+          return list;
+        
+        TreeNode current = root.left;
+        Stack<TreeNode>stack = new Stack<TreeNode>();
+        stack.push(root);
+        while(!stack.empty()){
+            while(current != null){
+                stack.push(current);
+                current = current.left;
+                // count++;
+            }
+            current = stack.pop();
+            // count--;
+            list.add(current.val);
+            current = current.right;
+            if(current != null){
+            stack.push(current);
+            current = current.left;
+            }
+            
+        }
+        
+        return list;
+    }
